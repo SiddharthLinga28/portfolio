@@ -18,9 +18,7 @@ function App() {
   <img className="w-full" src="https://via.placeholder.com/150" alt="Sample" />
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">Tailwind Card</div>
-    <p className="text-gray-700 text-base">
-      This is a simple card component using Tailwind CSS.
-    </p>
+    
   </div>
 </div>
 <div className="grid grid-cols-2 gap-4">
