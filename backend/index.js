@@ -1,18 +1,17 @@
-// server/index.js
+// backend/index.js
 import express from 'express';
 import cors from 'cors';
 import pg from 'pg';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3001;
+
 app.use(cors());
 
-// PostgreSQL config
 const db = new pg.Client({
-  connectionString: "postgresql://postgres:Siddu%402808@mainline.proxy.rlwy.net:45524/railway",
+  connectionString: "postgresql://postgres:faBGXVEFUsUmWwOuPcHUweJFvyUynydM@hopper.proxy.rlwy.net:51842/railway",
   ssl: { rejectUnauthorized: false }
 });
-
 
 db.connect();
 
@@ -27,5 +26,5 @@ app.get('/education', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });

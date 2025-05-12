@@ -1,40 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
+import ganeshBg from './assets/ganesh.png';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Click Me
-</button>
-<div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-  <img className="w-full" src="https://via.placeholder.com/150" alt="Sample" />
-  <div className="px-6 py-4">
-    <div className="font-bold text-xl mb-2">Tailwind Card</div>
-    
-  </div>
-</div>
-<div className="grid grid-cols-2 gap-4">
-  <div className="bg-red-200 p-4 text-center">1</div>
-  <div className="bg-green-200 p-4 text-center">2</div>
-  <div className="bg-blue-200 p-4 text-center">3</div>
-  <div className="bg-yellow-200 p-4 text-center">4</div>
-</div>
-<div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
-  <p className="font-bold">Warning</p>
-  <p>Something might go wrong.</p>
-</div>
+        <div
+          style={{
+            backgroundImage: `url(${ganeshBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height: '100vh',
+            width: '100vw',         // Full screen width
+            position: 'relative',
+          }}
+        >
 
 
-    </>
-  )
+      {/* Transparent white overlay */}
+      <div
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+        }}
+      />
+
+      {/* Hero Content */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          textAlign: 'center',
+          top: '10%',
+        }}
+      >
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>Siddharth Linga</h1>
+
+        <div style={{ marginTop: '20px' }}>
+          {['About', 'Skills', 'Research', 'Projects', 'Work Experience', 'Extra-curricular', 'Contact'].map((label) => (
+            <button
+              key={label}
+              style={{
+                margin: '5px',
+                padding: '10px 20px',
+                fontSize: '1rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => console.log(`${label} clicked`)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
