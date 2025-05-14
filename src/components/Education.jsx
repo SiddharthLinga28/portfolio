@@ -13,7 +13,7 @@ const Education = () => {
 
   return (
     <div>
-      <h2>Education</h2>
+      
       {educationData.map((edu) => (
         <div key={edu.id} style={{ border: '1px solid gray', margin: '10px', padding: '10px' }}>
           <h3>{edu.degree}</h3>
