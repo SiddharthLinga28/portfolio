@@ -1,0 +1,71 @@
+/* ✅ src/components/Education.css */
+
+.education-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.education-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.education-content {
+  flex: 1;
+  position: relative;
+}
+
+.education-content h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.education-content .completion-date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.education-content p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.education-content .majors {
+  font-style: italic;
+  color: #444;
+}
+
+.education-content .location {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.education-content strong {
+  color: #222;
+}
+
+
+.education-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid royalblue;
+}

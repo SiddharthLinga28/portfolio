@@ -1,5 +1,8 @@
 // src/components/Education.jsx
 import React, { useEffect, useState } from 'react';
+import './Education.css';
+import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
 
 const Education = () => {
   const [educationData, setEducationData] = useState([]);
@@ -15,15 +18,24 @@ const Education = () => {
     <div>
       
       {educationData.map((edu) => (
-        <div key={edu.id} style={{ border: '1px solid gray', margin: '10px', padding: '10px' }}>
+        <div key={edu.id} className="education-card">
+        <img
+  src={edu.id === 1 ? img1 : img2}
+  alt="Logo"
+  className="education-logo"
+/>
+
+        <div className="education-content">
+          <div className="completion-date">{edu.completion}</div>
           <h3>{edu.degree}</h3>
-          <p> {edu.institution}</p>
-          <p><strong>Completion:</strong> {edu.completion}</p>
-          <p><strong></strong> {edu.location}</p>
-          <p><strong>Majors:</strong> {edu.majors}</p>
+          <p className="majors">{edu.majors}</p>
+          <p>{edu.institution}</p>
+          <p className="location">{edu.location}</p>
           <p><strong>CGPA:</strong> {edu.cgpa}</p>
           {edu.description && <p><strong>Description:</strong> {edu.description}</p>}
         </div>
+        </div>
+
       ))}
     </div>
   );

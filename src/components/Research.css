@@ -1,0 +1,90 @@
+.research-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.research-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  will-change: transform;
+}
+.research-card.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.research-card.clickable:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 128, 255, 0.4); /* brighter, link-like */
+  border: 2px solid #007BFF; /* soft blue link color */
+}
+
+/* Fixed URL preview at bottom-left */
+.fixed-url-preview {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+  background-color: #e0f2ff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #005080;
+  z-index: 9999;
+  font-family: monospace;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.research-card h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-date {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+
+.skills {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.description {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.research-card a {
+  color: #0066cc;
+  text-decoration: underline;
+}

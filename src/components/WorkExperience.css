@@ -1,0 +1,58 @@
+/* ✅ src/components/WorkExperience.css */
+
+.work-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 40px;
+  align-items: center;
+}
+
+.work-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.work-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+}
+
+.card-date {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.current-label {
+  background-color: #007bff;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.work-card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.work-card h3 {
+  margin: 10px 0 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.description p {
+  margin: 6px 0;
+  line-height: 1.4;
+}

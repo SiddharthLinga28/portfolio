@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import './App.css';
 import ganeshBg from './assets/ganesh.png';
 import About from './components/About';
+import Research from './components/research';
+import WorkExperience from './components/WorkExperience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   const [activeSection, setActiveSection] = useState('About');
@@ -11,18 +15,16 @@ function App() {
     switch (activeSection) {
       case 'About':
         return <About />;
-      case 'Skills':
-        return <div className="placeholder">Skills section coming soon...</div>;
       case 'Research':
-        return <div className="placeholder">Research section coming soon...</div>;
+        return <Research/>;
       case 'Projects':
-        return <div className="placeholder">Projects section coming soon...</div>;
+        return <Projects/>;
       case 'Work Experience':
-        return <div className="placeholder">Work Experience section coming soon...</div>;
+        return <WorkExperience/>;
       case 'Extra-curricular':
         return <div className="placeholder">Extra-curricular section coming soon...</div>;
       case 'Contact':
-        return <div className="placeholder">Contact section coming soon...</div>;
+        return <Contact />;
       default:
         return null;
     }
@@ -35,21 +37,23 @@ function App() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
+        minHeight: '100%', // <-- change this
         width: '100vw',
         position: 'relative',
       }}
+
     >
       <div
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          backgroundColor: 'rgba(255, 255, 255, 0)',
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          minHeight: '100vh',
+          minHeight: '100%',  // <-- change this
           zIndex: 1,
         }}
+
       />
 
       <div
@@ -62,7 +66,7 @@ function App() {
       >
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>Siddharth Linga</h1>
         <div style={{ marginTop: '20px' }}>
-          {['About', 'Skills', 'Research', 'Projects', 'Work Experience', 'Extra-curricular', 'Contact'].map((label) => (
+          {['About', 'Research', 'Projects', 'Work Experience', 'Extra-curricular', 'Contact'].map((label) => (
             <button
               key={label}
               style={{

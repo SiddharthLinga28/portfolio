@@ -3,9 +3,11 @@ import React from 'react';
 import Education from './Education';
 import myPic from '../assets/mypic.png';
 import './About.css';
+import ganeshBg from '../assets/ganesh.png';
 
 const About = () => {
   return (
+     
     <div className="about-container">
       <div className="header-section">
         <div className="pic-block">
@@ -34,7 +36,7 @@ const About = () => {
       </div>
 
       <div className="bottom-section">
-        <div className="section compact">
+        <div >
           <h2>Education</h2>
           <Education />
         </div>
@@ -53,6 +55,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
