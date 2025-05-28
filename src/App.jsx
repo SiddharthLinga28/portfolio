@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ganeshBg from './assets/ganesh.png';
 import About from './components/About';
-import Research from './components/research';
+import Research from './components/Research';
 import WorkExperience from './components/WorkExperience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
