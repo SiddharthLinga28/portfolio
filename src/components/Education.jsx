@@ -1,42 +1,38 @@
 // src/components/Education.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Education.css';
 import img1 from '../assets/img1.png';
 import img2 from '../assets/img2.png';
 
 const Education = () => {
-  const [educationData, setEducationData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3001/education') // Local backend endpoint
-      .then((res) => res.json())
-      .then((data) => setEducationData(data))
-      .catch((err) => console.error('Error fetching education data:', err));
-  }, []);
-
   return (
     <div>
-      
-      {educationData.map((edu) => (
-        <div key={edu.id} className="education-card">
-        <img
-  src={edu.id === 1 ? img1 : img2}
-  alt="Logo"
-  className="education-logo"
-/>
-
+      {/* B.Tech */}
+      <div className="education-card">
+        <img src={img1} alt="CVR College Logo" className="education-logo" />
         <div className="education-content">
-          <div className="completion-date">{edu.completion}</div>
-          <h3>{edu.degree}</h3>
-          <p className="majors">{edu.majors}</p>
-          <p>{edu.institution}</p>
-          <p className="location">{edu.location}</p>
-          <p><strong>CGPA:</strong> {edu.cgpa}</p>
-          {edu.description && <p><strong>Description:</strong> {edu.description}</p>}
+          <div className="completion-date">May, 2023</div>
+          <h3>B.Tech</h3>
+          <p className="majors">Computer Science and Information Technology</p>
+          <p>CVR College Of Engineering</p>
+          <p className="location">TS, India</p>
+          <p><strong>CGPA:</strong> 8</p>
+          <p><strong>Description:</strong> Honors and Activities: President of Literature and Debate club. Chairperson of Computer Science Club</p>
         </div>
-        </div>
+      </div>
 
-      ))}
+      {/* Master of Science */}
+      <div className="education-card">
+        <img src={img2} alt="TAMU Logo" className="education-logo" />
+        <div className="education-content">
+          <div className="completion-date">May, 2025</div>
+          <h3>Master of Science</h3>
+          <p className="majors">Computer Science</p>
+          <p>Texas A&M University</p>
+          <p className="location">TX, USA</p>
+          <p><strong>CGPA:</strong> 3.5</p>
+        </div>
+      </div>
     </div>
   );
 };

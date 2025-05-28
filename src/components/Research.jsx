@@ -1,25 +1,54 @@
 // ✅ src/components/Research.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Research.css';
 
 function Research() {
-  const [projects, setProjects] = useState([]);
   const [hoveredURL, setHoveredURL] = useState('');
 
-  useEffect(() => {
-    fetch('http://localhost:3001/research')
-      .then((res) => res.json())
-      .then((data) => setProjects(data))
-      .catch((err) => console.error('Error fetching research data:', err));
-  }, []);
+  const projects = [
+    {
+      name: 'How You Split Matters: Custom Image Partitioning and Label Inference Attack Dynamics',
+      date: '2025-04-01',
+      skills: ['Information Assurance', 'CS'],
+      url: 'https://github.com/SiddharthLinga28/Projects/tree/main/How%20you%20split%20matters',
+      description: `
+        Developed a custom feature distribution technique to enhance vertical federated learning, improving upon existing vertical, random, and imbalanced distributions.
+        Executed four types of attacks on the CIFAR-10 dataset with 2, 3, and 4 passive parties, achieving 5–6% higher model accuracy and reducing attack accuracy by 0.5–1% compared to baseline methods.
+        Enabled user-driven customization for feature distribution patterns, offering greater flexibility and improved control.
+      `
+    },
+    {
+      name: 'Face2Feel: Emotion-Aware User Interface',
+      date: '2024-11-01',
+      skills: ['Emotion Detection', 'AI', 'Video Processing', 'DIP'],
+      url: 'https://github.com/SiddharthLinga28/face2feel/blob/main/README.md',
+      description: `
+        A dynamic UI implementation using emotion detection, Frontend designing, video processing building a dynamic UI that changes based on user emotion.
+        Helps in creating recommendation systems, user feedback analyzing, enhance User interaction.
+      `
+    },
+    {
+      name: 'Fishing the Phishing Data using GANs',
+      date: '2025-02-01',
+      skills: ['Python', 'Cyber Security'],
+      url: '',
+      description: `
+        Analyzed various ML algorithms to compare accuracy, execution time, and precision, identifying an efficient, robust, and cost-effective solution.
+        Repeated the experiment using GANs to generate realistic phishing data, enabling the model to handle complex scenarios and train better.
+        Achieved 98.4% accuracy, a significant improvement over 94.3% without GANs.
+      `
+    }
+  ];
 
-  const formatDescription = (text) => {
-    return text
-      .replace(/\\n/g, '\n')
+  const formatDescription = (text) =>
+    text
       .split(/\n|\. /)
-      .filter(line => line.trim() !== '')
-      .map((line, index) => <li key={index}>{line.trim().endsWith('.') ? line.trim() : line.trim() + '.'}</li>);
-  };
+      .filter((line) => line.trim() !== '')
+      .map((line, index) => (
+        <li key={index}>
+          {line.trim().endsWith('.') ? line.trim() : line.trim() + '.'}
+        </li>
+      ));
 
   const splitTitle = (title) => {
     const splitIndex = Math.max(title.indexOf(':'), title.indexOf(','));
@@ -62,10 +91,10 @@ function Research() {
                 </div>
                 {formatDate(item.date)}
               </div>
-              <p className="skills"><i>Skills: {item.skills.join(', ')}</i></p>
-              <ul className="description">
-                {formatDescription(item.description)}
-              </ul>
+              <p className="skills">
+                <i>Skills: {item.skills.join(', ')}</i>
+              </p>
+              <ul className="description">{formatDescription(item.description)}</ul>
             </div>
           );
         })}

@@ -1,5 +1,22 @@
 /* ✅ src/components/Education.css */
 
+.education-section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.education-container,
+.skills-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  min-width: 360px;
+}
+
 .education-card {
   background-color: white;
   border-radius: 16px;
@@ -62,7 +79,6 @@
 .education-content strong {
   color: #222;
 }
-
 
 .education-card:hover {
   transform: scale(1.03);
