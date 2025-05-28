@@ -65,7 +65,7 @@ function App() {
       >
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>Siddharth Linga</h1>
         <div style={{ marginTop: '20px' }}>
-          {['About', 'Research', 'Projects', 'Work Experience', 'Extra-curricular', 'Contact'].map((label) => (
+          {['About', 'Research', 'Projects', 'Work Experience', 'Contact'].map((label) => (
             <button
               key={label}
               style={{
