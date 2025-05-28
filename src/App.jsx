@@ -21,8 +21,7 @@ function App() {
         return <Projects/>;
       case 'Work Experience':
         return <WorkExperience/>;
-      case 'Extra-curricular':
-        return <div className="placeholder">Extra-curricular section coming soon...</div>;
+
       case 'Contact':
         return <Contact />;
       default:
